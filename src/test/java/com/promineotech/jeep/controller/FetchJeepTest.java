@@ -37,15 +37,7 @@ import lombok.Getter;
     "classpath:flyway/migrations/V1.1__Jeep_Data.sql"}, 
     config = @SqlConfig(encoding = "utf-8"))
     class FetchJeepTest extends FetchJeepTestSupport{
-    
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
-    @Test
-    void testDb() {
-      int numrows = JdbcTestUtils.countRowsInTable(jdbcTemplate, "customers");
-      System.out.println(numrows);
-    }
-    
+
     @LocalServerPort
     private int serverPort;
     
@@ -56,8 +48,7 @@ import lombok.Getter;
     protected String getBaseUri() {
       return String.format("http://localhost:%d/jeeps", serverPort);
     }
-    
-      @Disabled
+
       @Test
       void testThatJeepsAreReturnedWhenAValidModelAndTrimAreSupplied() {
         
