@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -18,4 +19,3 @@ public class Jeep {
   private int wheelSize;
   private BigDecimal basePrice;
 }
-
